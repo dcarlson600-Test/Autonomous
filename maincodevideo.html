@@ -6,36 +6,26 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 600px; /* MUST match iframe height */
   overflow: hidden;
   background: transparent;
 }
 
-.video-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
 video {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Shows full video without cropping */
   display: block;
+  object-fit: cover;
 
+  /* 15% fade on all edges (smooth version) */
   -webkit-mask-image:
     linear-gradient(to right,
       transparent 0%,
-      black 1%,
-      black 99%,
+      black 10%,
+      black 90%,
       transparent 100%),
     linear-gradient(to bottom,
       transparent 0%,
-      black 1%,
-      black 99%,
+      black 10%,
+      black 90%,
       transparent 100%);
 
   -webkit-mask-composite: source-in;
@@ -44,24 +34,23 @@ video {
   mask-image:
     linear-gradient(to right,
       transparent 0%,
-      black 1%,
-      black 99%,
+      black 10%,
+      black 90%,
       transparent 100%),
     linear-gradient(to bottom,
       transparent 0%,
-      black 1%,
-      black 99%,
+      black 10%,
+      black 90%,
       transparent 100%);
+  );
 }
 </style>
 </head>
 <body>
 
-<div class="video-container">
-  <video autoplay muted loop playsinline>
-    <source src="https://dcarlson600-test.github.io/Autonomous/websitevideo.mp4" type="video/mp4">
-  </video>
-</div>
+<video autoplay muted loop playsinline>
+  <source src="https://dcarlson600-test.github.io/Autonomous/websitevideo.mp4" type="video/mp4">
+</video>
 
 </body>
 </html>
