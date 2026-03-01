@@ -7,15 +7,24 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 600px; /* MUST match iframe height */
   overflow: hidden;
   background: transparent;
 }
 
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 video {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain; /* Shows full video */
   display: block;
-  object-fit: cover;
 
   /* Ultra subtle edge fade (1%–99%) */
   -webkit-mask-image:
@@ -50,11 +59,11 @@ video {
 </head>
 <body>
 
-<video autoplay muted loop playsinline>
-  <source src="https://dcarlson600-test.github.io/Autonomous/autovideo.mp4" type="video/mp4">
-</video>
-
-
+<div class="video-wrapper">
+  <video autoplay muted loop playsinline>
+    <source src="https://dcarlson600-test.github.io/Autonomous/autovideo.mp4" type="video/mp4">
+  </video>
+</div>
 
 </body>
 </html>
