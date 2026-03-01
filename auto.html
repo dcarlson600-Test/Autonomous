@@ -54,16 +54,7 @@ video {
   <source src="https://dcarlson600-test.github.io/Autonomous/autovideo.mp4" type="video/mp4">
 </video>
 
-<script>
-function sendHeight() {
-  const height = document.documentElement.scrollHeight;
-  parent.postMessage({ frameHeight: height }, "*");
-}
 
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-document.querySelector("video").addEventListener("loadedmetadata", sendHeight);
-</script>
 
 </body>
 </html>
