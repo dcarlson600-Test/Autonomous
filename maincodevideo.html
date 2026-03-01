@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <style>
 html, body {
   margin: 0;
@@ -10,13 +11,13 @@ html, body {
   background: transparent;
 }
 
-  
 video {
   width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
 
-  /* 15% fade on all edges (smooth version) */
+  /* Ultra subtle edge fade (1%–99%) */
   -webkit-mask-image:
     linear-gradient(to right,
       transparent 0%,
@@ -43,15 +44,26 @@ video {
       black 1%,
       black 99%,
       transparent 100%);
-  );
 }
 </style>
+
 </head>
 <body>
 
 <video autoplay muted loop playsinline>
   <source src="https://dcarlson600-test.github.io/Autonomous/websitevideo.mp4" type="video/mp4">
 </video>
+
+<script>
+function sendHeight() {
+  const height = document.documentElement.scrollHeight;
+  parent.postMessage({ frameHeight: height }, "*");
+}
+
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+document.querySelector("video").addEventListener("loadedmetadata", sendHeight);
+</script>
 
 </body>
 </html>
