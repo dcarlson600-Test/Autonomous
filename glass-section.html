@@ -150,12 +150,22 @@ html, body {
 
 <script>
 function sendHeight() {
-    const height = document.documentElement.scrollHeight;
+    const height = document.body.offsetHeight;
     window.parent.postMessage({ frameHeight: height }, "*");
 }
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-setTimeout(sendHeight, 300);
+
+/* Wait for fonts + layout */
+window.addEventListener("load", () => {
+    requestAnimationFrame(() => {
+        sendHeight();
+    });
+});
+
+/* Resize observer catches dynamic shifts */
+const resizeObserver = new ResizeObserver(() => {
+    sendHeight();
+});
+resizeObserver.observe(document.body);
 </script>
 
 </body>
