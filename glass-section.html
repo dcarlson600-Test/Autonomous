@@ -30,39 +30,52 @@ html, body {
     position: relative;
     width: 100%;
     max-width: 900px;
-    padding: 50px 60px;
-    border-radius: 32px;
+    padding: 55px 65px;
+    border-radius: 34px;
     overflow: hidden;
 
-    /* EXTREMELY light tint */
-    background: rgba(255,255,255,0.06);
+    /* VERY LIGHT base tint */
+    background: rgba(255,255,255,0.08);
 
-    /* High blur like Apple */
-    backdrop-filter: blur(60px) saturate(180%) contrast(110%);
-    -webkit-backdrop-filter: blur(60px) saturate(180%) contrast(110%);
+    /* Strong Apple blur */
+    backdrop-filter: blur(70px) saturate(160%) contrast(115%);
+    -webkit-backdrop-filter: blur(70px) saturate(160%) contrast(115%);
 
-    /* Thin inner glass edge */
-    border: 1px solid rgba(255,255,255,0.18);
+    /* Subtle edge separation */
+    border: 1px solid rgba(255,255,255,0.25);
 
-    /* Minimal depth */
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        0 4px 20px rgba(0,0,0,0.12);
+        inset 0 1px 0 rgba(255,255,255,0.45),
+        0 8px 28px rgba(0,0,0,0.12);
 }
 
-/* Edge light compression */
+/* Luminance compression layer */
 .liquid-glass::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 32px;
+    border-radius: 34px;
 
     background:
-        radial-gradient(circle at 10% 5%, rgba(255,255,255,0.5), transparent 45%),
-        radial-gradient(circle at 90% 95%, rgba(255,255,255,0.25), transparent 50%);
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.05)
+        );
 
     pointer-events: none;
     mix-blend-mode: overlay;
+}
+
+/* Text stabilization veil */
+.liquid-glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+
+    background: rgba(0,0,0,0.12);
+    pointer-events: none;
 }
 
 /* Text */
@@ -70,8 +83,8 @@ html, body {
     position: relative;
     font-size: 21px;
     line-height: 1.9;
-    margin-bottom: 24px;
-    color: rgba(255,255,255,0.96);
+    margin-bottom: 26px;
+    color: #ffffff;
     font-weight: 400;
     letter-spacing: 0.2px;
 }
@@ -140,7 +153,6 @@ function sendHeight() {
     const height = document.documentElement.scrollHeight;
     window.parent.postMessage({ frameHeight: height }, "*");
 }
-
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
 setTimeout(sendHeight, 300);
