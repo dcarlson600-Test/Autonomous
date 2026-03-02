@@ -150,22 +150,28 @@ html, body {
 
 <script>
 function sendHeight() {
-    const height = document.body.offsetHeight;
+    const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+    );
+
     window.parent.postMessage({ frameHeight: height }, "*");
 }
 
-/* Wait for fonts + layout */
+/* Wait for full layout stabilization */
 window.addEventListener("load", () => {
     requestAnimationFrame(() => {
-        sendHeight();
+        setTimeout(sendHeight, 50);
     });
 });
 
-/* Resize observer catches dynamic shifts */
+/* Catch any late rendering shifts */
 const resizeObserver = new ResizeObserver(() => {
     sendHeight();
 });
-resizeObserver.observe(document.body);
+resizeObserver.observe(document.documentElement);
 </script>
 
 </body>
