@@ -21,27 +21,24 @@ html, body {
     padding: 20px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
-/* TRUE LIQUID GLASS */
+/* LIQUID GLASS TILE */
 
 .liquid-glass {
     position: relative;
     width: 100%;
-    max-width: 900px;
-    padding: 55px 65px;
+    padding: 45px 55px;
     border-radius: 34px;
     overflow: hidden;
 
-    /* VERY LIGHT base tint */
     background: rgba(255,255,255,0.08);
 
-    /* Strong Apple blur */
     backdrop-filter: blur(70px) saturate(160%) contrast(115%);
     -webkit-backdrop-filter: blur(70px) saturate(160%) contrast(115%);
 
-    /* Subtle edge separation */
     border: 1px solid rgba(255,255,255,0.25);
 
     box-shadow:
@@ -49,31 +46,27 @@ html, body {
         0 8px 28px rgba(0,0,0,0.12);
 }
 
-/* Luminance compression layer */
+/* Luminance compression */
 .liquid-glass::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 34px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255,255,255,0.18),
-            rgba(255,255,255,0.05)
-        );
-
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.18),
+        rgba(255,255,255,0.05)
+    );
     pointer-events: none;
     mix-blend-mode: overlay;
 }
 
-/* Text stabilization veil */
+/* Text stabilization */
 .liquid-glass::after {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 34px;
-
     background: rgba(0,0,0,0.12);
     pointer-events: none;
 }
@@ -81,16 +74,12 @@ html, body {
 /* Text */
 .liquid-glass p {
     position: relative;
-    font-size: 21px;
-    line-height: 1.9;
-    margin-bottom: 26px;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 0;
     color: #ffffff;
     font-weight: 400;
     letter-spacing: 0.2px;
-}
-
-.liquid-glass p:last-child {
-    margin-bottom: 0;
 }
 
 /* Mobile */
@@ -98,6 +87,7 @@ html, body {
 
     .wrapper {
         padding: 15px;
+        gap: 20px;
     }
 
     .liquid-glass {
@@ -120,58 +110,36 @@ html, body {
 <div class="wrapper">
 
     <div class="liquid-glass">
-
         <p>
         Autonomous IT is a security-first technology partner built for small business.
         </p>
+    </div>
 
+    <div class="liquid-glass">
         <p>
-        We modernize, secure, and optimize your infrastructure so your systems run reliably,
-        efficiently, and safely.
+        We modernize, secure, and optimize your infrastructure so your systems run reliably, efficiently, and safely.
+        Small businesses face enterprise-level threats but rarely have enterprise-level resources. We bridge that gap.
         </p>
+    </div>
 
-        <p>
-        Small businesses face enterprise-level threats but rarely have enterprise-level resources.
-        We bridge that gap.
-        </p>
-
+    <div class="liquid-glass">
         <p>
         Through strong network architecture, cybersecurity, automation, and smart IT design,
         we create resilient environments that operate with confidence and independence.
-        </p>
-
-        <p>
         So you can focus on growing your business and not managing technology.
         </p>
-
     </div>
 
 </div>
 
 <script>
 function sendHeight() {
-    const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight
-    );
-
+    const height = document.body.offsetHeight;
     window.parent.postMessage({ frameHeight: height }, "*");
 }
 
-/* Wait for full layout stabilization */
-window.addEventListener("load", () => {
-    requestAnimationFrame(() => {
-        setTimeout(sendHeight, 50);
-    });
-});
-
-/* Catch any late rendering shifts */
-const resizeObserver = new ResizeObserver(() => {
-    sendHeight();
-});
-resizeObserver.observe(document.documentElement);
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
 </script>
 
 </body>
