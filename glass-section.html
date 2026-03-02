@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous Glass Section</title>
+
+<style>
+
+/* Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden; /* prevent internal scrollbars */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+/* Wrapper to control width */
+.wrapper {
+    width: 100%;
+    padding: 0 20px 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+/* Glass Tile */
+.glass-tile {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px 45px;
+    border-radius: 18px;
+
+    background: rgba(15, 45, 92, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+
+    box-sizing: border-box;
+}
+
+/* Text */
+.glass-tile p {
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.glass-tile p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .wrapper {
+        padding: 0 12px 25px 12px;
+    }
+
+    .glass-tile {
+        padding: 25px 20px;
+    }
+
+    .glass-tile p {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="glass-tile">
+
+        <p>
+        Autonomous IT is a security-first technology partner built for small business.
+        </p>
+
+        <p>
+        We modernize, secure, and optimize your infrastructure so your systems run reliably,
+        efficiently, and safely.
+        </p>
+
+        <p>
+        Small businesses face enterprise-level threats but rarely have enterprise-level resources.
+        We bridge that gap.
+        </p>
+
+        <p>
+        Through strong network architecture, cybersecurity, automation, and smart IT design,
+        we create resilient environments that operate with confidence and independence.
+        </p>
+
+        <p>
+        So you can focus on growing your business and not managing technology.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Auto-resize for Google Sites */
+
+function sendHeight() {
+    const height = document.documentElement.scrollHeight;
+    window.parent.postMessage({ frameHeight: height }, "*");
+}
+
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+
+/* Small delay for mobile layout stabilization */
+setTimeout(sendHeight, 300);
+
+</script>
+
+</body>
+</html>
