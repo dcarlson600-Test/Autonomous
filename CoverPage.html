@@ -43,6 +43,55 @@ body {
     max-width: 95%;
 }
 
+   /* =========================
+   LIQUID GLASS VIDEO
+========================= */
+
+.glass {
+    position: relative;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(40px) saturate(160%);
+    -webkit-backdrop-filter: blur(40px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 32px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.85),
+        0 25px 50px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform .45s cubic-bezier(.22,1,.36,1),
+                box-shadow .35s ease;
+}
+
+/* Glass lighting layer */
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.05)
+    );
+    pointer-events: none;
+}
+
+/* Bounce */
+.glass:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.95),
+        0 35px 70px rgba(0,0,0,0.25);
+}
+
+/* Video styling */
+.why-image video {
+    width: 100%;
+    display: block;
+    border-radius: 32px;
+    object-fit: cover;
+}
+
 /* =============================
    LIQUID GLASS SYSTEM
 ============================= */
@@ -312,7 +361,7 @@ body {
             </p>
         </div>
 
-       <div class="why-image">
+     <div class="why-image glass">
     <video autoplay muted loop playsinline>
         <source src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Fullvideo.MP4" type="video/mp4">
     </video>
