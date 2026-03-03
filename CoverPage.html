@@ -217,36 +217,44 @@ body {
     transform: scale(1.03);
 }
 
+
+
 /* =============================
-   CTA
+   CTA SECTION
 ============================= */
 
 .cta {
     background: #ececec;
-    padding: 60px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
 
 .cta h2 {
     font-family: "Times New Roman", serif;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 38px;
+    margin-bottom: 25px;
 }
 
-.cta button {
-    background: #3d7fbd;
+/* Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
     color: white;
-    border: none;
-    padding: 16px 50px;
-    font-size: 17px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform .3s ease, background .3s ease;
+    padding: 18px 60px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform .35s ease,
+                box-shadow .35s ease,
+                background .35s ease;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-.cta button:hover {
-    transform: translateY(-4px);
-    background: #2f6fae;
+/* Bounce */
+.cta-button:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    background: linear-gradient(180deg,#4c8fd1,#2f7ac5);
 }
 
 /* =============================
