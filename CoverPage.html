@@ -217,6 +217,56 @@ body {
     transform: scale(1.03);
 }
 
+   /* =============================
+   AUTONOMOUS DIVIDER
+============================= */
+
+.autonomous-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 50px 0; /* spacing above & below divider */
+}
+
+.autonomous-divider .line {
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.25);
+  transition: background .3s ease;
+}
+
+.autonomous-divider .logo {
+  padding: 0 22px;
+  transition: transform .35s ease;
+}
+
+.autonomous-divider img {
+  height: 55px;
+  display: block;
+}
+
+/* Bounce interaction */
+.autonomous-divider:hover .logo {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* If divider is on dark/blue section */
+.blue-section .autonomous-divider .line,
+.why-section .autonomous-divider .line {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Mobile refinement */
+@media(max-width: 768px){
+  .autonomous-divider {
+    margin: 35px 0;
+  }
+
+  .autonomous-divider img {
+    height: 42px;
+  }
+}
 
 
 /* =============================
@@ -324,6 +374,13 @@ body {
     </div>
 </section>
 
+   <div class="autonomous-divider">
+  <div class="line"></div>
+  <div class="logo">
+    <img src="https://dcarlson600-Test.github.io/Autonomous/Asingle.png" alt="A single">
+  </div>
+  <div class="line"></div>
+</div>
 <!-- SERVICES -->
 <section class="split-section">
     <div>
@@ -357,6 +414,13 @@ body {
 <!-- WHY -->
 <section class="why-section">
     <div class="section-title">Why Autonomous IT</div>
+   <div class="autonomous-divider">
+  <div class="line"></div>
+  <div class="logo">
+    <img src="https://dcarlson600-Test.github.io/Autonomous/Asingle.png" alt="A single">
+  </div>
+  <div class="line"></div>
+</div>
 
     <div class="why-grid">
         <div class="glass why-card">
