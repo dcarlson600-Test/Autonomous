@@ -56,6 +56,8 @@ body {
     text-align: center;
 }
 
+   
+
 /* =============================
    HERO LOGO SIZE CONTROL
 ============================= */
@@ -67,7 +69,48 @@ body {
     height: auto;
 }
 
-   
+
+   /* =============================
+   HERO TAGLINE (BOTTOM TEXT)
+============================= */
+
+.hero {
+    position: relative;
+}
+
+/* Container for bottom text */
+.hero-tagline {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #2f2f2f; /* charcoal */
+
+    text-shadow:
+        0 6px 20px rgba(0,0,0,0.35),
+        0 2px 4px rgba(0,0,0,0.4);
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Slight spacing between words */
+.hero-tagline span {
+    margin: 0 12px;
+}
+
+/* Responsive adjustment */
+@media(max-width: 768px){
+    .hero-tagline {
+        font-size: 26px;
+        bottom: 25px;
+        padding: 0 15px;
+    }
+}
 
    /* =========================
    LIQUID GLASS VIDEO
@@ -485,6 +528,12 @@ body {
 <!-- HERO -->
 <section class="hero">
     <img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
+
+    <div class="hero-tagline">
+        <span>Secure.</span>
+        <span>Automate.</span>
+        <span>Modernize.</span>
+    </div>
 </section>
 
 <!-- OUR MISSION -->
