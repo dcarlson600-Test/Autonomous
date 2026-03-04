@@ -310,70 +310,94 @@ body {
 }
 
 /* =============================
-   PREMIUM CTA TITLE (ISOLATED)
+   CTA CLEAN STRUCTURE
 ============================= */
 
 .cta {
     position: relative;
-    padding: 100px 20px;
     background: #ececec;
+    padding: 120px 20px 80px 20px;
     text-align: center;
 }
 
+/* TITLE */
 .cta-title {
     position: relative;
+    display: inline-block;
     font-family: "Times New Roman", serif;
     font-size: 52px;
     font-weight: 700;
     color: #2b2f33;
     letter-spacing: -0.5px;
-    display: inline-block;
+    margin-bottom: 40px;
+    overflow: hidden; /* CONTAINS SHIMMER */
 
-    /* Clean drop shadow */
+    /* Strong readable shadow */
     text-shadow:
-        0 6px 18px rgba(0,0,0,0.25),
-        0 2px 0 rgba(0,0,0,0.4);
+        0 8px 25px rgba(0,0,0,0.35),
+        0 2px 0 rgba(0,0,0,0.6);
 }
 
-/* Reflection underneath */
+/* Reflection */
 .cta-title .reflection {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%) scaleY(-1);
     font-size: 52px;
-    opacity: 0.05;
+    font-weight: 700;
+    color: rgba(0,0,0,0.45); /* DARKER for readability */
+    opacity: 0.25;
     pointer-events: none;
 
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
 }
 
-/* Shimmer effect — strictly clipped to title width */
+/* SHIMMER — strictly clipped */
 .cta-title::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -150%;
+    left: -120%;
     width: 40%;
     height: 100%;
     background: linear-gradient(
         75deg,
         transparent,
-        rgba(61,127,189,0.7),
+        rgba(61,127,189,0.8),
         transparent
     );
-    transform: skewX(-25deg);
+    transform: skewX(-20deg);
     pointer-events: none;
 }
 
+/* Animate shimmer */
 .cta-title.shimmer-active::after {
-    animation: shimmerSweep 3.5s ease forwards;
+    animation: shimmerSweep 2.8s ease forwards;
 }
 
 @keyframes shimmerSweep {
-    0% { left: -150%; }
+    0% { left: -120%; }
     100% { left: 150%; }
+}
+
+/* BUTTON — CLEARLY BELOW */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
+    color: white;
+    padding: 18px 60px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 /* =============================
    CTA SECTION
@@ -544,17 +568,21 @@ body {
 </section>
 
 <section class="cta shimmer-trigger">
+    
     <h2 class="cta-title">
         It’s Time to Rethink Your IT
         <span class="reflection">AUTONOMOUS</span>
     </h2>
 
-    <a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="cta-button">
-        Schedule Your Consultation
-    </a>
+    <div class="cta-button-wrapper">
+        <a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cta-button">
+            Schedule Your Consultation
+        </a>
+    </div>
+
 </section>
 <script>
 const shimmerTarget = document.querySelector('.shimmer-trigger');
@@ -562,8 +590,14 @@ const shimmerTarget = document.querySelector('.shimmer-trigger');
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
-            document.querySelector('.cta-title')
-                .classList.add('shimmer-active');
+            const title = document.querySelector('.cta-title');
+            title.classList.add('shimmer-active');
+
+            // remove class after animation completes
+            setTimeout(()=>{
+                title.classList.remove('shimmer-active');
+            }, 3000);
+
             observer.disconnect();
         }
     });
