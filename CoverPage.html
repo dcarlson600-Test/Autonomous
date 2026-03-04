@@ -310,70 +310,64 @@ body {
 }
 
 /* =============================
-   PREMIUM CTA TITLE
+   PREMIUM CTA TITLE (ISOLATED)
 ============================= */
 
 .cta {
     position: relative;
-    overflow: hidden;
-    background: #ececec;
     padding: 100px 20px;
+    background: #ececec;
     text-align: center;
 }
 
 .cta-title {
     position: relative;
     font-family: "Times New Roman", serif;
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 700;
-    color: #ffffff;
+    color: #2b2f33;
     letter-spacing: -0.5px;
-
-    /* Drop shadow depth */
-    text-shadow:
-        0 8px 25px rgba(0,0,0,0.35),
-        0 3px 0 rgba(0,0,0,0.5);
-
     display: inline-block;
+
+    /* Clean drop shadow */
+    text-shadow:
+        0 6px 18px rgba(0,0,0,0.25),
+        0 2px 0 rgba(0,0,0,0.4);
 }
 
-/* Reflection */
-.cta-title::after {
-    content: attr(data-reflect);
+/* Reflection underneath */
+.cta-title .reflection {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
-    transform: scaleY(-1);
-    opacity: 0.08;
-    color: #2b2f33;
-    font-size: 48px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1);
+    font-size: 52px;
+    opacity: 0.05;
     pointer-events: none;
 
-    /* Fade reflection */
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
 }
 
-/* Shimmer overlay */
-.cta-title::before {
+/* Shimmer effect — strictly clipped to title width */
+.cta-title::after {
     content: "";
     position: absolute;
     top: 0;
     left: -150%;
-    width: 50%;
+    width: 40%;
     height: 100%;
     background: linear-gradient(
         75deg,
         transparent,
-        rgba(61,127,189,0.8),
+        rgba(61,127,189,0.7),
         transparent
     );
     transform: skewX(-25deg);
+    pointer-events: none;
 }
 
-/* Animate shimmer */
-.cta-title.shimmer-active::before {
+.cta-title.shimmer-active::after {
     animation: shimmerSweep 3.5s ease forwards;
 }
 
@@ -550,8 +544,9 @@ body {
 </section>
 
 <section class="cta shimmer-trigger">
-    <h2 class="cta-title" data-reflect="AUTONOMOUS">
+    <h2 class="cta-title">
         It’s Time to Rethink Your IT
+        <span class="reflection">AUTONOMOUS</span>
     </h2>
 
     <a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
