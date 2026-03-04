@@ -299,22 +299,7 @@ body {
   background: rgba(255,255,255,0.4);
 }
 
-/* =============================
-   MOBILE HERO LOGO BOOST
-============================= */
 
-@media(max-width: 900px){
-
-    .hero {
-        padding: 50px 20px 80px 20px;
-    }
-
-    .hero img {
-        width: 300vw;      /* Almost full width */
-        max-width: 800px; /* Safety cap */
-    }
-
-}
 /* =============================
    CTA CLEAN STRUCTURE
 ============================= */
@@ -401,9 +386,22 @@ body {
     transition: transform .35s ease, box-shadow .35s ease;
 }
 
+   
 .cta-button:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+/* =============================
+   mobile logo SECTION
+============================= */
+   @media(max-width: 768px){
+
+    .header img,
+    .nav img,
+    .mobile-logo {
+        height: 500px;
+    }
+
 }
 /* =============================
    CTA SECTION
