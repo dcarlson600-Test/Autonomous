@@ -63,10 +63,15 @@ body {
 ============================= */
 
 /* Desktop */
+/* =============================
+   HERO LOGO — DOMINANT
+============================= */
+
 .hero img {
-    width: 900px;        /* Bigger for desktop */
-    max-width: 85vw;     /* Prevent overflow on smaller laptops */
+    width: min(1100px, 80vw);
     height: auto;
+    display: block;
+    margin: 0 auto 40px auto;
 }
 
 
@@ -105,11 +110,16 @@ body {
 
 /* Responsive adjustment */
 @media(max-width: 768px){
-    .hero-tagline {
-        font-size: 26px;
-        bottom: 25px;
-        padding: 0 15px;
+
+    .hero {
+        padding: 100px 20px 80px 20px;
     }
+
+    .hero img {
+        width: 95vw;
+        max-width: none;
+    }
+
 }
 
    /* =========================
