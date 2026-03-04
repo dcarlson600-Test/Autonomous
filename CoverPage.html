@@ -14,348 +14,253 @@ GLOBAL
 * { box-sizing: border-box; }
 
 body {
-margin: 0;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: #f3f6fa;
-color: #2b2f33;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:#f3f6fa;
+color:#2b2f33;
 }
 
-/* =============================
-SECTION TITLES
-============================= */
+/* Section Titles */
 
 .section-title {
-font-family: "Times New Roman", serif;
-font-size: 46px;
-text-align: center;
-margin-bottom: 35px;
-font-weight: 700;
-letter-spacing: -0.5px;
+font-family:"Times New Roman",serif;
+font-size:46px;
+text-align:center;
+margin-bottom:35px;
+font-weight:700;
+letter-spacing:-0.5px;
 }
 
 .blue-section .section-title,
-.why-section .section-title {
-color: #ffffff;
-text-shadow:
-0 3px 8px rgba(0,0,0,0.35),
-0 1px 0 rgba(0,0,0,0.4);
+.why-section .section-title{
+color:#ffffff;
+text-shadow:0 3px 8px rgba(0,0,0,0.35),0 1px 0 rgba(0,0,0,0.4);
 }
 
 .split-section .section-title,
-.cta h2 {
-color: #2b2f33;
-text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+.cta h2{
+color:#2b2f33;
+text-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
 /* =============================
 HERO
 ============================= */
 
-.hero {
-background: url("https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/coverbackground.PNG") center/cover no-repeat;
-padding: 120px 20px 140px 20px;
-text-align: center;
-position: relative;
+.hero{
+background:url("https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/coverbackground.PNG") center/cover no-repeat;
+padding:120px 20px 100px 20px;
+text-align:center;
+position:relative;
 }
 
-.hero img {
-width: min(1100px, 80vw);
-height: auto;
-display: block;
-margin: 0 auto 40px auto;
+.hero img{
+width:min(1100px,80vw);
+height:auto;
+display:block;
+margin:0 auto 40px auto;
 }
 
 /* =============================
 TAGLINE
 ============================= */
 
-.hero-tagline {
-font-size: 36px;
-font-weight: 600;
-letter-spacing: 1px;
-color: #2f2f2f;
-
-text-shadow:
-0 6px 20px rgba(0,0,0,0.35),
-0 2px 4px rgba(0,0,0,0.4);
-
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-margin-bottom: 50px;
-}
-
-.hero-tagline span {
-margin: 0 12px;
-}
-
-/* =============================
-HERO BUTTON SYSTEM
-============================= */
-
-.hero-buttons-wrapper{
-
-display:flex;
-justify-content:center;
-
-margin-top:40px;
-
-/* overlap effect */
-margin-bottom:-55px;
-
-position:relative;
-z-index:10;
-
-}
-
-.hero-buttons{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-/* BUTTON STYLE */
-
-.hero-btn{
-
-background:#ffffff;
-color:#2a2a2a;
-
-font-size:18px;
+.hero-tagline{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+width:100%;
+text-align:center;
+font-size:36px;
 font-weight:600;
-text-decoration:none;
-
-padding:18px 42px;
-
-border-radius:50px;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,0.18),
-0 4px 10px rgba(0,0,0,0.10);
-
-transition:all .25s ease;
-
-backdrop-filter: blur(6px);
-
+letter-spacing:1px;
+color:#2f2f2f;
+text-shadow:0 6px 20px rgba(0,0,0,0.35),0 2px 4px rgba(0,0,0,0.4);
 }
 
-/* HOVER */
-
-.hero-btn:hover{
-
-background:#eef5ff;
-
-transform:translateY(-5px) scale(1.05);
-
-box-shadow:
-0 18px 40px rgba(0,0,0,0.25),
-0 8px 18px rgba(0,0,0,0.15);
-
-}
-
-/* CLICK */
-
-.hero-btn:active{
-transform:scale(.96);
-}
+.hero-tagline span{ margin:0 12px; }
 
 /* =============================
 LIQUID GLASS
 ============================= */
 
-.glass {
-position: relative;
-background: rgba(255,255,255,0.45);
-backdrop-filter: blur(40px) saturate(160%);
--webkit-backdrop-filter: blur(40px) saturate(160%);
-border: 1px solid rgba(255,255,255,0.65);
-border-radius: 32px;
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,0.85),
-0 25px 50px rgba(0,0,0,0.12);
-overflow: hidden;
-transition: transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .35s ease;
+.glass{
+position:relative;
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(40px) saturate(160%);
+-webkit-backdrop-filter:blur(40px) saturate(160%);
+border:1px solid rgba(255,255,255,0.65);
+border-radius:32px;
+box-shadow:inset 0 1px 0 rgba(255,255,255,0.85),0 25px 50px rgba(0,0,0,0.12);
+overflow:hidden;
+transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
 }
 
-.glass::before {
-content: "";
-position: absolute;
-inset: 0;
-border-radius: 32px;
-background: linear-gradient(
-to bottom,
-rgba(255,255,255,0.25),
-rgba(255,255,255,0.05)
-);
-pointer-events: none;
-}
-
-.glass:hover {
-transform: translateY(-8px) scale(1.02);
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,0.95),
-0 35px 70px rgba(0,0,0,0.18);
+.glass:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 35px 70px rgba(0,0,0,0.18);
 }
 
 /* =============================
 BLUE SECTION
 ============================= */
 
-.blue-section {
-background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-padding: 120px 25px 70px 25px;
-color: #2b2f33;
+.blue-section{
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+padding:70px 25px;
 }
 
-.blue-container {
-max-width: 1200px;
-margin: auto;
-padding: 50px 30px;
+.blue-container{
+max-width:1200px;
+margin:auto;
+padding:50px 30px;
 }
 
-.mission-grid {
-display: grid;
-grid-template-columns: repeat(3,1fr);
-gap: 30px;
-margin-top: 30px;
+.mission-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:30px;
 }
 
-.mission-card {
-padding: 40px;
-text-align: center;
-font-size: 18px;
-line-height: 1.6;
+.mission-card{
+padding:40px;
+text-align:center;
+font-size:18px;
+line-height:1.6;
 }
 
 /* =============================
-SERVICES SPLIT
+SERVICES
 ============================= */
 
-.split-section {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-padding: 80px 40px;
-background: #f7f7f7;
+.split-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+padding:80px 40px;
+background:#f7f7f7;
 }
 
-.service-box {
-padding: 40px;
+.service-box{ padding:40px; }
+
+.service-box h3{
+margin-top:20px;
+margin-bottom:5px;
 }
 
-.service-box h3 {
-margin-top: 20px;
-margin-bottom: 5px;
-}
-
-.service-box p {
-margin-top: 0;
-margin-bottom: 12px;
-color: #555;
+.service-box p{
+margin-top:0;
+margin-bottom:12px;
+color:#555;
 }
 
 /* =============================
 WHY SECTION
 ============================= */
 
-.why-section {
-background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-padding: 80px 40px;
-color: #2b2f33;
+.why-section{
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+padding:80px 40px;
 }
 
-.why-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 50px;
-max-width: 1200px;
-margin: auto;
-align-items: center;
+.why-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+max-width:1200px;
+margin:auto;
+align-items:center;
 }
 
-.why-card {
-padding: 35px;
-}
+.why-card{ padding:35px; }
 
-.why-image video {
-width: 100%;
+.why-card p{ line-height:1.6; }
+
+.why-image video{
+width:100%;
 display:block;
-border-radius:30px;
+border-radius:32px;
 object-fit:cover;
 }
+
+/* =============================
+DIVIDER
+============================= */
+
+.autonomous-divider{
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+margin:50px 0;
+}
+
+.autonomous-divider .line{
+flex:1;
+height:1px;
+background:rgba(255,255,255,0.4);
+}
+
+.autonomous-divider .logo{ padding:0 22px; }
+
+.autonomous-divider img{ height:55px; }
 
 /* =============================
 CTA
 ============================= */
 
-.cta {
+.cta{
 background:#ececec;
 padding:70px 20px;
 text-align:center;
 }
 
-.cta h2 {
-font-family:"Times New Roman", serif;
-font-size:38px;
-margin-bottom:25px;
+.cta-title{
+font-family:"Times New Roman",serif;
+font-size:52px;
+font-weight:700;
+margin-bottom:40px;
+position:relative;
+overflow:hidden;
 }
 
-.cta-button {
+.cta-title::after{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:40%;
+height:100%;
+background:linear-gradient(75deg,transparent,rgba(61,127,189,0.8),transparent);
+transform:skewX(-20deg);
+}
+
+.cta-title.shimmer-active::after{
+animation:shimmerSweep 2.8s ease forwards;
+}
+
+@keyframes shimmerSweep{
+0%{left:-120%;}
+100%{left:150%;}
+}
+
+.cta-button{
 display:inline-block;
-background: linear-gradient(180deg,#3d7fbd,#2f6fae);
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
 color:white;
 padding:18px 60px;
 font-size:18px;
 border-radius:8px;
 text-decoration:none;
-transition:transform .35s ease,box-shadow .35s ease,background .35s ease;
 box-shadow:0 12px 25px rgba(0,0,0,0.15);
+transition:transform .35s ease,box-shadow .35s ease;
 }
 
-.cta-button:hover {
-transform:translateY(-6px) scale(1.04);
+.cta-button:hover{
+transform:translateY(-6px);
 box-shadow:0 20px 45px rgba(0,0,0,0.25);
-background:linear-gradient(180deg,#4c8fd1,#2f7ac5);
-}
-
-/* =============================
-MOBILE
-============================= */
-
-@media(max-width:1000px){
-
-.mission-grid{grid-template-columns:1fr;}
-
-.split-section{
-grid-template-columns:1fr;
-padding:60px 20px;
-gap:40px;
-}
-
-.why-grid{
-grid-template-columns:1fr;
-gap:35px;
-}
-
-.hero img{width:280px;}
-
-.section-title{font-size:32px;}
-
-.hero-buttons{
-flex-direction:column;
-align-items:center;
-gap:18px;
-}
-
-.hero-buttons-wrapper{
-margin-bottom:-40px;
-}
-
-.hero-btn{
-width:260px;
-text-align:center;
-}
-
 }
 
 </style>
@@ -364,6 +269,7 @@ text-align:center;
 <body>
 
 <!-- HERO -->
+
 <section class="hero">
 
 <img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
@@ -374,24 +280,10 @@ text-align:center;
 <span>Modernize.</span>
 </div>
 
-<!-- HERO BUTTONS -->
-<div class="hero-buttons-wrapper">
-<div class="hero-buttons">
-
-<a href="https://calendar.app.google/2o9wmD6NiJ7eoobC6" class="hero-btn">
-Schedule a Strategy Call
-</a>
-
-<a href="https://www.autonomous-it.com/our-services" class="hero-btn">
-Explore Our Services
-</a>
-
-</div>
-</div>
-
 </section>
 
 <!-- OUR MISSION -->
+
 <section class="blue-section">
 
 <div class="blue-container">
@@ -418,640 +310,133 @@ Through strong network architecture, cybersecurity, automation, and smart IT des
 
 </section>
 
-</body>
-</html>    text-shadow:
-        0 3px 8px rgba(0,0,0,0.35),
-        0 1px 0 rgba(0,0,0,0.4);
-}
-
-/* Slight shadow on light sections */
-.split-section .section-title,
-.cta h2 {
-    color: #2b2f33;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-/* =============================
-   HERO
-============================= */
-
-.hero {
-    background: url("https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/coverbackground.PNG") center/cover no-repeat;
-    padding: 120px 20px 100px 20px;
-    text-align: center;
-}
-
-   
-
-/* =============================
-   HERO LOGO SIZE CONTROL
-============================= */
-
-/* Desktop */
-/* =============================
-   HERO LOGO — DOMINANT
-============================= */
-
-.hero img {
-    width: min(1100px, 80vw);
-    height: auto;
-    display: block;
-    margin: 0 auto 40px auto;
-}
-
-
-   /* =============================
-   HERO TAGLINE (BOTTOM TEXT)
-============================= */
-
-.hero {
-    position: relative;
-}
-
-/* Container for bottom text */
-.hero-tagline {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #2f2f2f; /* charcoal */
-
-    text-shadow:
-        0 6px 20px rgba(0,0,0,0.35),
-        0 2px 4px rgba(0,0,0,0.4);
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-/* Slight spacing between words */
-.hero-tagline span {
-    margin: 0 12px;
-}
-
-/* Responsive adjustment */
-@media(max-width: 768px){
-
-    .hero {
-        padding: 100px 20px 80px 20px;
-    }
-
-    .hero img {
-        width: 95vw;
-        max-width: none;
-    }
-
-}
-
-   /* =========================
-   LIQUID GLASS VIDEO
-========================= */
-
-.glass {
-    position: relative;
-    background: rgba(255,255,255,0.35);
-    backdrop-filter: blur(40px) saturate(160%);
-    -webkit-backdrop-filter: blur(40px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.6);
-    border-radius: 32px;
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.85),
-        0 25px 50px rgba(0,0,0,0.15);
-    overflow: hidden;
-    transition: transform .45s cubic-bezier(.22,1,.36,1),
-                box-shadow .35s ease;
-}
-
-/* Glass lighting layer */
-.glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.25),
-        rgba(255,255,255,0.05)
-    );
-    pointer-events: none;
-}
-
-/* Bounce */
-.glass:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.95),
-        0 35px 70px rgba(0,0,0,0.25);
-}
-
-/* Video styling */
-.why-image video {
-    width: 100%;
-    display: block;
-    border-radius: 32px;
-    object-fit: cover;
-}
-
-/* =========================
-   LIQUID GLASS SYSTEM
-========================= */
-
-.glass {
-    position: relative;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(40px) saturate(160%);
-    -webkit-backdrop-filter: blur(40px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.65);
-    border-radius: 32px;
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.85),
-        0 25px 50px rgba(0,0,0,0.12);
-    overflow: hidden;
-    transition: transform .45s cubic-bezier(.22,1,.36,1),
-                box-shadow .35s ease;
-}
-
-/* Glass lighting layer */
-.glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.25),
-        rgba(255,255,255,0.05)
-    );
-    pointer-events: none;
-}
-
-/* Bounce */
-.glass:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.95),
-        0 35px 70px rgba(0,0,0,0.18);
-}
-
-/* =============================
-   BLUE SECTION
-============================= */
-
-.blue-section {
-    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-    padding: 70px 25px;
-    color: #2b2f33;
-}
-
-.blue-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 30px;
-  
-}
-
-/* =============================
-   MISSION CARDS
-============================= */
-
-.mission-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.mission-card {
-    padding: 40px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* =============================
-   SERVICES SPLIT
-============================= */
-
-.split-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    padding: 80px 40px;
-    background: #f7f7f7;
-}
-
-.service-box {
-    padding: 40px;
-}
-
-.service-box h3 {
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-.service-box p {
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: #555;
-}
-
-/* =============================
-   WHY SECTION
-============================= */
-
-.why-section {
-    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-    padding: 80px 40px;
-    color: #2b2f33;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    max-width: 1200px;
-    margin: auto;
-    align-items: center;
-}
-
-.why-card {
-    padding: 35px;
-}
-
-.why-card p {
-    line-height: 1.6;
-}
-
-.why-image img {
-    width: 100%;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    transition: transform .45s ease;
-}
-
-.why-image img:hover {
-    transform: scale(1.03);
-}
-
-   /* =============================
-   AUTONOMOUS DIVIDER
-============================= */
-
-.autonomous-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 50px 0; /* spacing above & below divider */
-}
-
-.autonomous-divider .line {
-  flex: 1;
-  height: 1px;
-  background: rgba(0,0,0,0.25);
-  transition: background .3s ease;
-}
-
-.autonomous-divider .logo {
-  padding: 0 22px;
-  transition: transform .35s ease;
-}
-
-.autonomous-divider img {
-  height: 55px;
-  display: block;
-}
-
-/* Bounce interaction */
-.autonomous-divider:hover .logo {
-  transform: translateY(-4px) scale(1.05);
-}
-
-/* If divider is on dark/blue section */
-.blue-section .autonomous-divider .line,
-.why-section .autonomous-divider .line {
-  background: rgba(255,255,255,0.4);
-}
-
-
-/* =============================
-   CTA CLEAN STRUCTURE
-============================= */
-
-.cta {
-    position: relative;
-    background: #ececec;
-    padding: 120px 20px 80px 20px;
-    text-align: center;
-}
-
-/* TITLE */
-.cta-title {
-    position: relative;
-    display: inline-block;
-    font-family: "Times New Roman", serif;
-    font-size: 52px;
-    font-weight: 700;
-    color: #2b2f33;
-    letter-spacing: -0.5px;
-    margin-bottom: 40px;
-    overflow: hidden; /* CONTAINS SHIMMER */
-
-    /* Strong readable shadow */
-    text-shadow:
-        0 8px 25px rgba(0,0,0,0.35),
-        0 2px 0 rgba(0,0,0,0.6);
-}
-
-/* Reflection */
-.cta-title .reflection {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) scaleY(-1);
-    font-size: 52px;
-    font-weight: 700;
-    color: rgba(0,0,0,0.45); /* DARKER for readability */
-    opacity: 0.25;
-    pointer-events: none;
-
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
-}
-
-/* SHIMMER — strictly clipped */
-.cta-title::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(
-        75deg,
-        transparent,
-        rgba(61,127,189,0.8),
-        transparent
-    );
-    transform: skewX(-20deg);
-    pointer-events: none;
-}
-
-/* Animate shimmer */
-.cta-title.shimmer-active::after {
-    animation: shimmerSweep 2.8s ease forwards;
-}
-
-@keyframes shimmerSweep {
-    0% { left: -120%; }
-    100% { left: 150%; }
-}
-
-/* BUTTON — CLEARLY BELOW */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-    color: white;
-    padding: 18px 60px;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    transition: transform .35s ease, box-shadow .35s ease;
-}
-
-   
-.cta-button:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-}
-/* =============================
-   mobile logo SECTION
-============================= */
-   @media(max-width: 768px){
-
-    .header img,
-    .nav img,
-    .mobile-logo {
-        height: 500px;
-    }
-
-}
-/* =============================
-   CTA SECTION
-============================= */
-
-.cta {
-    background: #ececec;
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.cta h2 {
-    font-family: "Times New Roman", serif;
-    font-size: 38px;
-    margin-bottom: 25px;
-}
-
-/* Button */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(180deg,#3d7fbd,#2f6fae);
-    color: white;
-    padding: 18px 60px;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: transform .35s ease,
-                box-shadow .35s ease,
-                background .35s ease;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-/* Bounce */
-.cta-button:hover {
-    transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-    background: linear-gradient(180deg,#4c8fd1,#2f7ac5);
-}
-
-/* =============================
-   MOBILE CLEANUP
-============================= */
-
-@media(max-width: 1000px){
-
-    .mission-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .split-section {
-        grid-template-columns: 1fr;
-        padding: 60px 20px;
-        gap: 40px;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .hero img {
-        width: 280px;
-    }
-
-    .section-title {
-        font-size: 32px;
-    }
-
-    .mission-card,
-    .service-box,
-    .why-card {
-        padding: 30px;
-    }
-
-}
-
-</style>
-</head>
-<body>
-
-<!-- HERO -->
-<section class="hero">
-    <img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
-
-    <div class="hero-tagline">
-        <span>Secure.</span>
-        <span>Automate.</span>
-        <span>Modernize.</span>
-    </div>
-</section>
-
-<!-- OUR MISSION -->
-   
-<section class="blue-section">
-    <div class="blue-container">
-        <div class="section-title">Our Mission</div>
-
-        <div class="mission-grid">
-            <div class="glass mission-card">
-                Autonomous IT is a security-first technology partner built for small and medium size businesses.
-            </div>
-
-            <div class="glass mission-card">
-                We modernize, secure, and optimize your infrastructure so your systems run reliably, efficiently, and safely.
-            </div>
-
-            <div class="glass mission-card">
-                Through strong network architecture, cybersecurity, automation, and smart IT design, we create resilient environments that operate with confidence and independence.
-            </div>
-        </div>
-    </div>
-</section>
-
-   
-  <div class="line"></div>
-</div>
 <!-- SERVICES -->
+
 <section class="split-section">
-    <div>
-        <div class="section-title">Our Services</div>
-        <div class="glass service-box">
-            <h3>Network Architecture</h3>
-            <p>Secure firewall deployment and segmentation</p>
 
-            <h3>Cybersecurity</h3>
-            <p>Endpoint protection and threat prevention</p>
+<div>
 
-            <h3>Cloud & Backup Strategy</h3>
-            <p>Resilient data protection and recovery design</p>
+<div class="section-title">Our Services</div>
 
-            <h3>Process Optimization</h3>
-            <p>Automation and operational efficiency</p>
+<div class="glass service-box">
 
-            <h3>Website & Infrastructure</h3>
-            <p>Secure deployment and foundational setup</p>
-        </div>
-    </div>
+<h3>Network Architecture</h3>
+<p>Secure firewall deployment and segmentation</p>
 
-    <div>
-        <div class="section-title">How We Work</div>
-        <div class="glass service-box">
-            <p>Assessment → Design → Deploy → Optimize</p>
-        </div>
-    </div>
+<h3>Cybersecurity</h3>
+<p>Endpoint protection and threat prevention</p>
+
+<h3>Cloud & Backup Strategy</h3>
+<p>Resilient data protection and recovery design</p>
+
+<h3>Process Optimization</h3>
+<p>Automation and operational efficiency</p>
+
+<h3>Website & Infrastructure</h3>
+<p>Secure deployment and foundational setup</p>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="section-title">How We Work</div>
+
+<div class="glass service-box">
+
+<p>Assessment → Design → Deploy → Optimize</p>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- WHY -->
+
 <section class="why-section">
-    <div class="section-title">Why Autonomous IT</div>
-   <div class="autonomous-divider">
-  <div class="line"></div>
-  <div class="logo">
-    <img src="https://dcarlson600-Test.github.io/Autonomous/Asingle.png" alt="A single">
-  </div>
-  <div class="line"></div>
+
+<div class="section-title">Why Autonomous IT</div>
+
+<div class="autonomous-divider">
+
+<div class="line"></div>
+
+<div class="logo">
+<img src="https://dcarlson600-Test.github.io/Autonomous/Asingle.png">
 </div>
 
-    <div class="why-grid">
-        <div class="glass why-card">
-            <p>▹ Most small businesses rely on reactive IT support.</p>
-            <p>▹ We build proactive, security-first foundations.</p>
+<div class="line"></div>
 
-            <p>
-                Autonomous IT is structured around prevention, not repair.
-                Every deployment is engineered to reduce risk and increase operational efficiency.
-            </p>
-        </div>
-
-     <div class="why-image glass">
-    <video autoplay muted loop playsinline>
-        <source src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/autovideo720.MP4" type="video/mp4">
-    </video>
 </div>
+
+<div class="why-grid">
+
+<div class="glass why-card">
+
+<p>▹ Most small businesses rely on reactive IT support.</p>
+<p>▹ We build proactive, security-first foundations.</p>
+
+<p>
+Autonomous IT is structured around prevention, not repair.
+Every deployment is engineered to reduce risk and increase operational efficiency.
+</p>
+
+</div>
+
+<div class="why-image glass">
+
+<video autoplay muted loop playsinline>
+<source src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/autovideo720.MP4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- CTA -->
 
 <section class="cta shimmer-trigger">
-    
-    <h2 class="cta-title">
-        It’s Time to Rethink Your IT
-        <span class="reflection">AUTONOMOUS</span>
-    </h2>
 
-    <div class="cta-button-wrapper">
-        <a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="cta-button">
-            Schedule Your Consultation
-        </a>
-    </div>
+<h2 class="cta-title">
+It’s Time to Rethink Your IT
+</h2>
+
+<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
+target="_blank"
+rel="noopener noreferrer"
+class="cta-button">
+Schedule Your Consultation
+</a>
 
 </section>
+
 <script>
-const shimmerTarget = document.querySelector('.shimmer-trigger');
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            const title = document.querySelector('.cta-title');
-            title.classList.add('shimmer-active');
+const shimmerTarget=document.querySelector('.shimmer-trigger');
 
-            // remove class after animation completes
-            setTimeout(()=>{
-                title.classList.remove('shimmer-active');
-            }, 3000);
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
 
-            observer.disconnect();
-        }
-    });
+const title=document.querySelector('.cta-title');
+title.classList.add('shimmer-active');
+
+setTimeout(()=>{
+title.classList.remove('shimmer-active');
+},3000);
+
+observer.disconnect();
+}
+});
 },{threshold:0.4});
 
 observer.observe(shimmerTarget);
+
 </script>
+
 </body>
 </html>
