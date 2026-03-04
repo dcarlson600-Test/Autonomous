@@ -56,10 +56,18 @@ body {
     text-align: center;
 }
 
+/* =============================
+   HERO LOGO SIZE CONTROL
+============================= */
+
+/* Desktop */
 .hero img {
-    width: 420px;
-    max-width: 95%;
+    width: 900px;        /* Bigger for desktop */
+    max-width: 85vw;     /* Prevent overflow on smaller laptops */
+    height: auto;
 }
+
+   
 
    /* =========================
    LIQUID GLASS VIDEO
@@ -291,7 +299,6 @@ body {
   background: rgba(255,255,255,0.4);
 }
 
-/* Mobile refinement */
 /* =============================
    MOBILE HERO LOGO BOOST
 ============================= */
@@ -303,12 +310,11 @@ body {
     }
 
     .hero img {
-        width: 92vw;
-        max-width: 500px;
+        width: 95vw;      /* Almost full width */
+        max-width: 700px; /* Safety cap */
     }
 
 }
-
 /* =============================
    CTA CLEAN STRUCTURE
 ============================= */
