@@ -11,18 +11,20 @@
 GLOBAL
 ============================= */
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box;}
 
-body {
+body{
 margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 background:#f3f6fa;
 color:#2b2f33;
 }
 
-/* Section Titles */
+/* =============================
+SECTION TITLES
+============================= */
 
-.section-title {
+.section-title{
 font-family:"Times New Roman",serif;
 font-size:46px;
 text-align:center;
@@ -34,7 +36,9 @@ letter-spacing:-0.5px;
 .blue-section .section-title,
 .why-section .section-title{
 color:#ffffff;
-text-shadow:0 3px 8px rgba(0,0,0,0.35),0 1px 0 rgba(0,0,0,0.4);
+text-shadow:
+0 3px 8px rgba(0,0,0,0.35),
+0 1px 0 rgba(0,0,0,0.4);
 }
 
 .split-section .section-title,
@@ -49,16 +53,60 @@ HERO
 
 .hero{
 background:url("https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/coverbackground.PNG") center/cover no-repeat;
-padding:120px 20px 100px 20px;
+padding:120px 20px 140px 20px;
 text-align:center;
-position:relative;
 }
 
 .hero img{
 width:min(1100px,80vw);
 height:auto;
 display:block;
-margin:0 auto 40px auto;
+margin:0 auto 35px auto;
+}
+
+/* =============================
+HERO BUTTONS
+============================= */
+
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+.hero-button{
+display:inline-block;
+padding:16px 44px;
+font-size:16px;
+font-weight:600;
+border-radius:10px;
+text-decoration:none;
+transition:all .35s cubic-bezier(.22,1,.36,1);
+}
+
+.hero-button-primary{
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+color:white;
+box-shadow:0 12px 28px rgba(0,0,0,0.25);
+}
+
+.hero-button-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,0.35);
+}
+
+.hero-button-secondary{
+background:rgba(255,255,255,0.3);
+color:#1f2a36;
+border:1px solid rgba(255,255,255,0.7);
+box-shadow:0 10px 22px rgba(0,0,0,0.15);
+}
+
+.hero-button-secondary:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,0.5);
+box-shadow:0 18px 40px rgba(0,0,0,0.25);
 }
 
 /* =============================
@@ -66,20 +114,21 @@ TAGLINE
 ============================= */
 
 .hero-tagline{
-position:absolute;
-bottom:40px;
-left:50%;
-transform:translateX(-50%);
-width:100%;
-text-align:center;
+margin-top:10px;
 font-size:36px;
 font-weight:600;
 letter-spacing:1px;
-color:#2f2f2f;
-text-shadow:0 6px 20px rgba(0,0,0,0.35),0 2px 4px rgba(0,0,0,0.4);
+color:#ffffff;
+text-align:center;
+
+text-shadow:
+0 6px 20px rgba(0,0,0,0.45),
+0 2px 4px rgba(0,0,0,0.4);
 }
 
-.hero-tagline span{ margin:0 12px; }
+.hero-tagline span{
+margin:0 12px;
+}
 
 /* =============================
 LIQUID GLASS
@@ -92,14 +141,19 @@ backdrop-filter:blur(40px) saturate(160%);
 -webkit-backdrop-filter:blur(40px) saturate(160%);
 border:1px solid rgba(255,255,255,0.65);
 border-radius:32px;
-box-shadow:inset 0 1px 0 rgba(255,255,255,0.85),0 25px 50px rgba(0,0,0,0.12);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.85),
+0 25px 50px rgba(0,0,0,0.12);
 overflow:hidden;
-transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+transition:transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .35s ease;
 }
 
 .glass:hover{
 transform:translateY(-8px) scale(1.02);
-box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 35px 70px rgba(0,0,0,0.18);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.95),
+0 35px 70px rgba(0,0,0,0.18);
 }
 
 /* =============================
@@ -143,7 +197,9 @@ padding:80px 40px;
 background:#f7f7f7;
 }
 
-.service-box{ padding:40px; }
+.service-box{
+padding:40px;
+}
 
 .service-box h3{
 margin-top:20px;
@@ -174,9 +230,13 @@ margin:auto;
 align-items:center;
 }
 
-.why-card{ padding:35px; }
+.why-card{
+padding:35px;
+}
 
-.why-card p{ line-height:1.6; }
+.why-card p{
+line-height:1.6;
+}
 
 .why-image video{
 width:100%;
@@ -186,7 +246,7 @@ object-fit:cover;
 }
 
 /* =============================
-DIVIDER
+AUTONOMOUS DIVIDER
 ============================= */
 
 .autonomous-divider{
@@ -203,9 +263,14 @@ height:1px;
 background:rgba(255,255,255,0.4);
 }
 
-.autonomous-divider .logo{ padding:0 22px; }
+.autonomous-divider .logo{
+padding:0 22px;
+}
 
-.autonomous-divider img{ height:55px; }
+.autonomous-divider img{
+height:55px;
+display:block;
+}
 
 /* =============================
 CTA
@@ -213,7 +278,7 @@ CTA
 
 .cta{
 background:#ececec;
-padding:70px 20px;
+padding:120px 20px 80px 20px;
 text-align:center;
 }
 
@@ -233,7 +298,12 @@ top:0;
 left:-120%;
 width:40%;
 height:100%;
-background:linear-gradient(75deg,transparent,rgba(61,127,189,0.8),transparent);
+background:linear-gradient(
+75deg,
+transparent,
+rgba(61,127,189,0.8),
+transparent
+);
 transform:skewX(-20deg);
 }
 
@@ -263,6 +333,52 @@ transform:translateY(-6px);
 box-shadow:0 20px 45px rgba(0,0,0,0.25);
 }
 
+/* =============================
+MOBILE
+============================= */
+
+@media(max-width:1000px){
+
+.mission-grid{
+grid-template-columns:1fr;
+}
+
+.split-section{
+grid-template-columns:1fr;
+padding:60px 20px;
+gap:40px;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+gap:35px;
+}
+
+/* Larger mobile logo */
+.hero img{
+width:380px;
+max-width:85vw;
+}
+
+/* Mobile tagline fix */
+.hero-tagline{
+font-size:clamp(16px,4.2vw,22px);
+white-space:nowrap;
+width:100%;
+padding:0 12px;
+letter-spacing:0.3px;
+}
+
+/* tighter spacing so line fits */
+.hero-tagline span{
+margin:0 6px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+}
 </style>
 </head>
 
@@ -274,17 +390,33 @@ box-shadow:0 20px 45px rgba(0,0,0,0.25);
 
 <img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
 
+<div class="hero-actions">
+
+<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
+target="_blank"
+rel="noopener noreferrer"
+class="hero-button hero-button-primary">
+Schedule Your Consultation
+</a>
+
+<a href="#services"
+class="hero-button hero-button-secondary">
+Explore Our Services
+</a>
+
+</div>
+
+</section>
+
+<!-- MISSION -->
+
+<section class="blue-section">
+
 <div class="hero-tagline">
 <span>Secure.</span>
 <span>Automate.</span>
 <span>Modernize.</span>
 </div>
-
-</section>
-
-<!-- OUR MISSION -->
-
-<section class="blue-section">
 
 <div class="blue-container">
 
@@ -312,7 +444,7 @@ Through strong network architecture, cybersecurity, automation, and smart IT des
 
 <!-- SERVICES -->
 
-<section class="split-section">
+<section id="services" class="split-section">
 
 <div>
 
@@ -421,7 +553,6 @@ const shimmerTarget=document.querySelector('.shimmer-trigger');
 const observer=new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-
 const title=document.querySelector('.cta-title');
 title.classList.add('shimmer-active');
 
@@ -437,6 +568,168 @@ observer.disconnect();
 observer.observe(shimmerTarget);
 
 </script>
+<footer class="glass-footer">
+
+<div class="footer-bg">AUTONOMOUS</div>
+
+<div class="footer-content">
+
+<div class="footer-text">
+All Rights Reserved © 2026
+</div>
+
+<div class="footer-logo">
+<img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
+</div>
+
+</div>
+
+</footer>
+
+<style>
+
+/* ================================
+FOOTER
+================================ */
+
+.glass-footer{
+
+position:relative;
+width:100%;
+
+padding:50px 20px;
+
+background:rgba(20,115,175,0.85);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border-top:1px solid rgba(255,255,255,0.2);
+
+overflow:hidden;
+
+}
+
+/* ================================
+BACKGROUND WORD
+================================ */
+
+.footer-bg{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:14vw;
+font-weight:800;
+
+color:rgba(255,255,255,0.06);
+
+white-space:nowrap;
+
+pointer-events:none;
+
+}
+
+/* ================================
+CONTENT
+================================ */
+
+.footer-content{
+
+position:relative;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+max-width:1200px;
+margin:auto;
+
+}
+
+/* text */
+
+.footer-text{
+
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+
+font-size:22px;
+
+color:white;
+
+}
+
+/* logo */
+
+.footer-logo img{
+
+height:65px;
+
+transition:all .35s ease;
+
+filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+
+}
+
+.footer-logo img:hover{
+
+transform:scale(1.05);
+
+filter:
+drop-shadow(0 10px 20px rgba(0,0,0,0.45))
+drop-shadow(0 0 12px rgba(80,200,255,0.6));
+
+}
+
+/* ================================
+MOBILE
+================================ */
+
+@media (max-width:768px){
+
+.footer-content{
+
+flex-direction:column;
+
+gap:18px;
+
+text-align:center;
+
+}
+
+/* shrink the giant background word */
+
+.footer-bg{
+
+font-size:28vw;
+
+opacity:.08;
+
+}
+
+/* smaller text */
+
+.footer-text{
+
+font-size:20px;
+
+}
+
+/* smaller logo */
+
+.footer-logo img{
+
+height:55px;
+
+}
+
+}
+
+</style>
 
 </body>
 </html>
