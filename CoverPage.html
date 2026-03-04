@@ -309,7 +309,78 @@ body {
 
 }
 
+/* =============================
+   PREMIUM CTA TITLE
+============================= */
 
+.cta {
+    position: relative;
+    overflow: hidden;
+    background: #ececec;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.cta-title {
+    position: relative;
+    font-family: "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+
+    /* Drop shadow depth */
+    text-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        0 3px 0 rgba(0,0,0,0.5);
+
+    display: inline-block;
+}
+
+/* Reflection */
+.cta-title::after {
+    content: attr(data-reflect);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scaleY(-1);
+    opacity: 0.08;
+    color: #2b2f33;
+    font-size: 48px;
+    pointer-events: none;
+
+    /* Fade reflection */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+}
+
+/* Shimmer overlay */
+.cta-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        75deg,
+        transparent,
+        rgba(61,127,189,0.8),
+        transparent
+    );
+    transform: skewX(-25deg);
+}
+
+/* Animate shimmer */
+.cta-title.shimmer-active::before {
+    animation: shimmerSweep 3.5s ease forwards;
+}
+
+@keyframes shimmerSweep {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
 /* =============================
    CTA SECTION
 ============================= */
@@ -478,9 +549,10 @@ body {
 </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-    <h2>It’s Time to Rethink Your IT</h2>
+<section class="cta shimmer-trigger">
+    <h2 class="cta-title" data-reflect="AUTONOMOUS">
+        It’s Time to Rethink Your IT
+    </h2>
 
     <a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
        target="_blank"
@@ -489,6 +561,20 @@ body {
         Schedule Your Consultation
     </a>
 </section>
+<script>
+const shimmerTarget = document.querySelector('.shimmer-trigger');
 
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            document.querySelector('.cta-title')
+                .classList.add('shimmer-active');
+            observer.disconnect();
+        }
+    });
+},{threshold:0.4});
+
+observer.observe(shimmerTarget);
+</script>
 </body>
 </html>
