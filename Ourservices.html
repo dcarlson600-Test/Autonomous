@@ -67,6 +67,80 @@ transform:translateY(-6px);
 }
 
 /* =============================
+ASSESSMENT
+============================= */
+
+.pricing{
+padding:80px 30px;
+background:#ffffff;
+}
+
+.pricing-title{
+text-align:center;
+font-family:"Times New Roman",serif;
+font-size:42px;
+margin-bottom:50px;
+}
+
+.pricing-grid{
+display:flex;
+justify-content:center;
+max-width:700px;
+margin:auto;
+}
+
+.plan{
+padding:50px;
+text-align:center;
+width:100%;
+}
+
+.plan-name{
+font-size:26px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.plan-price{
+font-size:56px;
+font-weight:700;
+margin-bottom:5px;
+}
+
+.plan-period{
+color:#666;
+margin-bottom:25px;
+}
+
+.plan-features{
+text-align:left;
+font-size:16px;
+line-height:1.7;
+margin-bottom:30px;
+padding-left:18px;
+}
+
+.plan-features li{
+margin-bottom:10px;
+}
+
+.plan-button{
+display:inline-block;
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+color:white;
+padding:16px 50px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:all .3s ease;
+}
+
+.plan-button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =============================
 SERVICE GRID
 ============================= */
 
@@ -91,86 +165,32 @@ line-height:1.6;
 }
 
 /* =============================
-PRICING
+UPGRADE NOTICE
 ============================= */
 
-.pricing{
+.upgrade-note{
 padding:80px 30px;
-background:#ffffff;
+background:#f3f6fa;
 }
 
-.pricing-title{
-text-align:center;
-font-family:"Times New Roman",serif;
-font-size:42px;
-margin-bottom:50px;
-}
-
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:35px;
-max-width:1200px;
+.upgrade-card{
+max-width:900px;
 margin:auto;
-}
-
-.plan{
-padding:45px;
+padding:50px;
 text-align:center;
 }
 
-.plan-name{
-font-size:22px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.plan-price{
-font-size:42px;
-font-weight:700;
-margin-bottom:5px;
-}
-
-.plan-period{
-color:#666;
+.upgrade-title{
+font-family:"Times New Roman",serif;
+font-size:36px;
 margin-bottom:25px;
 }
 
-.plan-features{
-text-align:left;
-font-size:16px;
+.upgrade-text{
+font-size:18px;
 line-height:1.7;
-margin-bottom:25px;
-padding-left:18px;
-}
-
-.plan-features li{
-margin-bottom:8px;
-}
-
-.plan-button{
-display:inline-block;
-background:linear-gradient(180deg,#3d7fbd,#2f6fae);
-color:white;
-padding:14px 40px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:all .3s ease;
-}
-
-.plan-button:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* =============================
-FEATURED PLAN
-============================= */
-
-.featured{
-transform:scale(1.05);
-border:2px solid rgba(61,127,189,0.5);
+color:#444;
+margin-bottom:18px;
 }
 
 /* =============================
@@ -209,14 +229,6 @@ MOBILE
 grid-template-columns:1fr;
 }
 
-.pricing-grid{
-grid-template-columns:1fr;
-}
-
-.featured{
-transform:none;
-}
-
 .page-title{
 font-size:34px;
 }
@@ -243,6 +255,45 @@ We improve networks, strengthen cybersecurity, and build systems that run smooth
 
 </section>
 
+<!-- $99 ASSESSMENT (TOP SECTION) -->
+
+<section class="pricing">
+
+<div class="pricing-title">
+Small Business and Home Technology Assessment
+</div>
+
+<div class="pricing-grid">
+
+<div class="glass plan">
+
+<div class="plan-name">Assessment Cost</div>
+
+<div class="plan-price">$99</div>
+<div class="plan-period">one-time</div>
+
+<ul class="plan-features">
+
+<li>Network & Wi-Fi review</li>
+<li>Cybersecurity risk overview</li>
+<li>Backup & recovery evaluation</li>
+<li>Technology efficiency analysis</li>
+<li>Automation opportunities</li>
+<li>Professional improvement recommendations</li>
+
+</ul>
+
+<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
+class="plan-button">
+Book Assessment
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- SERVICES -->
 
 <section class="services">
@@ -250,110 +301,80 @@ We improve networks, strengthen cybersecurity, and build systems that run smooth
 <div class="services-grid">
 
 <div class="glass service-card">
-<strong>Network Infrastructure</strong><br><br>
-Secure networks, WiFi systems, and firewall deployment designed for reliability and performance.
+<strong>Automation</strong><br><br>
+Automating repetitive technology tasks so systems run efficiently and reduce manual work.
 </div>
 
 <div class="glass service-card">
 <strong>Cybersecurity</strong><br><br>
-Protection against modern threats including phishing, malware, and unauthorized access.
+Protection against phishing, malware, ransomware, and unauthorized access across your network and devices.
 </div>
 
 <div class="glass service-card">
-<strong>Security Systems</strong><br><br>
-Camera systems and monitoring solutions for homes and small businesses.
+<strong>Network Engineering</strong><br><br>
+Secure network architecture, firewall configuration, and infrastructure improvements for stability and performance.
+</div>
+
+<div class="glass service-card">
+<strong>Business Wi-Fi</strong><br><br>
+Professional wireless networks designed for offices, retail spaces, and modern homes.
+</div>
+
+<div class="glass service-card">
+<strong>Security Cameras</strong><br><br>
+Camera systems and monitoring solutions for homes and small businesses with reliable recording.
+</div>
+
+<div class="glass service-card">
+<strong>Data Backup & Recovery</strong><br><br>
+Secure backup systems that protect important files and allow rapid recovery if data is lost.
+</div>
+
+<div class="glass service-card">
+<strong>Website Infrastructure</strong><br><br>
+Modern hosting environments, domain setup, and infrastructure for secure and reliable websites.
+</div>
+
+<div class="glass service-card">
+<strong>IT Consulting</strong><br><br>
+Professional technology guidance to evaluate systems, identify risks, and plan improvements.
+</div>
+
+<div class="glass service-card">
+<strong>Technology Modernization</strong><br><br>
+Upgrading outdated systems and networks to modern, secure, and efficient technology environments.
+</div>
+
+<div class="glass service-card">
+<strong>System Monitoring</strong><br><br>
+Monitoring systems and infrastructure to detect issues early and keep technology running smoothly.
 </div>
 
 </div>
 
 </section>
 
-<!-- PRICING -->
+<!-- EQUIPMENT NOTICE -->
 
-<section class="pricing">
+<section class="upgrade-note">
 
-<div class="pricing-title">
-Service Plans
-</div>
+<div class="glass upgrade-card">
 
-<div class="pricing-grid">
+<h2 class="upgrade-title">
+Technology Upgrade Notice
+</h2>
 
-<!-- STARTER -->
+<p class="upgrade-text">
+During a technology assessment or project implementation, Autonomous IT evaluates the reliability, security, and performance of existing equipment such as routers, firewalls, switches, and Wi-Fi systems.
+</p>
 
-<div class="glass plan">
+<p class="upgrade-text">
+In some cases, older or consumer-grade equipment may not meet modern security standards or performance requirements. When this occurs, recommended upgrades may be necessary to ensure the network operates securely, reliably, and efficiently.
+</p>
 
-<div class="plan-name">Starter</div>
-
-<div class="plan-price">$150</div>
-<div class="plan-period">per month</div>
-
-<ul class="plan-features">
-
-<li>Basic network monitoring</li>
-<li>System health checks</li>
-<li>Cybersecurity essentials</li>
-<li>Remote support</li>
-<li>Technology review</li>
-
-</ul>
-
-<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
-class="plan-button">
-Get Started
-</a>
-
-</div>
-
-<!-- GROWTH -->
-
-<div class="glass plan featured">$300</div>
-
-<div class="plan-name">Growth</div>
-
-<div class="plan-period">per month</div>
-
-<ul class="plan-features">
-
-<li>Everything in Starter</li>
-<li>Advanced cybersecurity protection</li>
-<li>Threat monitoring</li>
-<li>Network performance optimization</li>
-<li>Monthly IT improvement review</li>
-
-</ul>
-
-<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
-class="plan-button">
-Get Started
-</a>
-
-</div>
-
-<!-- AUTONOMOUS -->
-
-<div class="glass plan">
-
-<div class="plan-name">Autonomous</div>
-
-<div class="plan-price">$699</div>
-<div class="plan-period">per month</div>
-
-<ul class="plan-features">
-
-<li>Everything in Growth</li>
-<li>Full cybersecurity monitoring</li>
-<li>Network architecture improvements</li>
-<li>Automation & efficiency optimization</li>
-<li>Priority support</li>
-
-</ul>
-
-<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
-class="plan-button">
-Get Started
-</a>
-
-</div>
+<p class="upgrade-text">
+Our goal is always to make the best use of existing infrastructure when possible. However, when technology limitations create security risks or performance issues, we provide clear recommendations for modern solutions designed to support long-term stability and protection.
+</p>
 
 </div>
 
@@ -374,169 +395,6 @@ Schedule Your Consultation
 </a>
 
 </section>
-
-<footer class="glass-footer">
-
-<div class="footer-bg">AUTONOMOUS</div>
-
-<div class="footer-content">
-
-<div class="footer-text">
-All Rights Reserved © 2026
-</div>
-
-<div class="footer-logo">
-<img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
-</div>
-
-</div>
-
-</footer>
-
-<style>
-
-/* ================================
-FOOTER
-================================ */
-
-.glass-footer{
-
-position:relative;
-width:100%;
-
-padding:50px 20px;
-
-background:rgba(20,115,175,0.85);
-
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-
-border-top:1px solid rgba(255,255,255,0.2);
-
-overflow:hidden;
-
-}
-
-/* ================================
-BACKGROUND WORD
-================================ */
-
-.footer-bg{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-font-size:14vw;
-font-weight:800;
-
-color:rgba(255,255,255,0.06);
-
-white-space:nowrap;
-
-pointer-events:none;
-
-}
-
-/* ================================
-CONTENT
-================================ */
-
-.footer-content{
-
-position:relative;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-max-width:1200px;
-margin:auto;
-
-}
-
-/* text */
-
-.footer-text{
-
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
-
-font-size:22px;
-
-color:white;
-
-}
-
-/* logo */
-
-.footer-logo img{
-
-height:65px;
-
-transition:all .35s ease;
-
-filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
-
-}
-
-.footer-logo img:hover{
-
-transform:scale(1.05);
-
-filter:
-drop-shadow(0 10px 20px rgba(0,0,0,0.45))
-drop-shadow(0 0 12px rgba(80,200,255,0.6));
-
-}
-
-/* ================================
-MOBILE
-================================ */
-
-@media (max-width:768px){
-
-.footer-content{
-
-flex-direction:column;
-
-gap:18px;
-
-text-align:center;
-
-}
-
-/* shrink the giant background word */
-
-.footer-bg{
-
-font-size:28vw;
-
-opacity:.08;
-
-}
-
-/* smaller text */
-
-.footer-text{
-
-font-size:20px;
-
-}
-
-/* smaller logo */
-
-.footer-logo img{
-
-height:55px;
-
-}
-
-}
-
-</style>
 
 </body>
 </html>
