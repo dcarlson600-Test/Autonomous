@@ -49,22 +49,65 @@ line-height:1.6;
 GLASS
 ============================= */
 
+/* =============================
+LIQUID GLASS
+============================= */
+
 .glass{
-background:rgba(255,255,255,0.55);
-backdrop-filter:blur(30px) saturate(160%);
--webkit-backdrop-filter:blur(30px) saturate(160%);
-border-radius:28px;
-border:1px solid rgba(255,255,255,0.65);
-
+position:relative;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(70px) saturate(160%);
+-webkit-backdrop-filter:blur(70px) saturate(160%);
+border:1px solid rgba(255,255,255,0.35);
+border-radius:32px;
 box-shadow:
-inset 0 1px 0 rgba(255,255,255,0.85),
-0 20px 45px rgba(0,0,0,0.12);
+inset 0 1px 0 rgba(255,255,255,0.35),
+0 25px 55px rgba(0,0,0,0.18);
+overflow:hidden;
+transition:transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .35s ease,
+background .35s ease;
+}
 
-transition:transform .4s cubic-bezier(.22,1,.36,1);
+/* Apple style glass highlight layer */
+.glass::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:inherit;
+background:linear-gradient(
+145deg,
+rgba(255,255,255,0.35) 0%,
+rgba(255,255,255,0.15) 40%,
+rgba(255,255,255,0.02) 60%,
+rgba(255,255,255,0.12) 100%
+);
+opacity:.35;
+pointer-events:none;
+}
+
+/* subtle light refraction */
+.glass::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:inherit;
+background:radial-gradient(
+circle at 25% 20%,
+rgba(255,255,255,0.25),
+transparent 65%
+);
+mix-blend-mode:overlay;
+opacity:.35;
+pointer-events:none;
 }
 
 .glass:hover{
-transform:translateY(-6px);
+transform:translateY(-10px) scale(1.025);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.45),
+0 40px 80px rgba(0,0,0,0.25);
+background:rgba(255,255,255,0.18);
 }
 
 /* =============================
@@ -221,7 +264,7 @@ Improve Your Technology
 </div>
 
 <div class="page-subtitle">
-Many businesses struggle with slow systems, unreliable networks, and constant technology issues.  
+Many businesses struggle with sluggish systems, unreliable networks, and constant technology issues.  
 We redesign and improve your IT so it works reliably, securely, and efficiently.
 </div>
 
@@ -234,7 +277,7 @@ We redesign and improve your IT so it works reliably, securely, and efficiently.
 <div class="problem-grid">
 
 <div class="glass problem-card">
-Slow computers, poor WiFi, and constant troubleshooting interrupt daily business operations.
+ We focus on automating as much as possible. This includes your business processes and even network equipment. 
 </div>
 
 <div class="glass problem-card">
