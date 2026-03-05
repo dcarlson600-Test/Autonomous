@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity | Autonomous IT</title>
+
+<style>
+
+/* =============================
+GLOBAL
+============================= */
+
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:#f3f6fa;
+color:#2b2f33;
+}
+
+/* =============================
+PAGE HEADER
+============================= */
+
+.page-header{
+padding:70px 20px 40px 20px;
+text-align:center;
+}
+
+.page-title{
+font-family:"Times New Roman",serif;
+font-size:46px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.page-subtitle{
+font-size:20px;
+color:#555;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+/* =============================
+GLASS STYLE
+============================= */
+
+.glass{
+background:rgba(255,255,255,0.55);
+backdrop-filter:blur(30px) saturate(160%);
+-webkit-backdrop-filter:blur(30px) saturate(160%);
+border-radius:28px;
+border:1px solid rgba(255,255,255,0.65);
+
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.85),
+0 20px 45px rgba(0,0,0,0.12);
+
+transition:transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+.glass:hover{
+transform:translateY(-6px);
+}
+
+/* =============================
+THREATS SECTION
+============================= */
+
+.threat-section{
+padding:60px 30px;
+}
+
+.threat-grid{
+max-width:1200px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.threat-card{
+padding:35px;
+text-align:center;
+font-size:18px;
+line-height:1.6;
+}
+
+/* =============================
+PROTECTION SECTION
+============================= */
+
+.protection{
+padding:80px 30px;
+background:#ffffff;
+}
+
+.protection-grid{
+max-width:1200px;
+margin:auto;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.protection-box{
+padding:40px;
+}
+
+.protection-box h3{
+margin-bottom:8px;
+}
+
+.protection-box p{
+color:#555;
+margin-top:0;
+margin-bottom:16px;
+}
+
+/* =============================
+SECURITY RESULTS
+============================= */
+
+.security-results{
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+padding:70px 30px;
+}
+
+.results-title{
+text-align:center;
+font-family:"Times New Roman",serif;
+font-size:42px;
+color:white;
+margin-bottom:40px;
+}
+
+.results-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+max-width:1200px;
+margin:auto;
+}
+
+.result-card{
+padding:35px;
+text-align:center;
+color:white;
+font-size:18px;
+}
+
+/* =============================
+CTA
+============================= */
+
+.cta{
+padding:100px 20px;
+text-align:center;
+background:#ececec;
+}
+
+.cta-title{
+font-family:"Times New Roman",serif;
+font-size:46px;
+margin-bottom:35px;
+}
+
+.cta-button{
+display:inline-block;
+background:linear-gradient(180deg,#3d7fbd,#2f6fae);
+color:white;
+padding:18px 55px;
+font-size:18px;
+border-radius:8px;
+text-decoration:none;
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* =============================
+MOBILE
+============================= */
+
+@media(max-width:1000px){
+
+.threat-grid{
+grid-template-columns:1fr;
+}
+
+.protection-grid{
+grid-template-columns:1fr;
+}
+
+.results-grid{
+grid-template-columns:1fr;
+}
+
+.page-title{
+font-size:34px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<section class="page-header">
+
+<div class="page-title">
+Cybersecurity Protection
+</div>
+
+<div class="page-subtitle">
+Cyber threats are no longer just a problem for large corporations.  
+Small businesses are now one of the most common targets.  
+We help protect your systems, data, and operations so your business can run safely and confidently.
+</div>
+
+</section>
+
+<!-- THREATS -->
+
+<section class="threat-section">
+
+<div class="threat-grid">
+
+<div class="glass threat-card">
+Phishing emails and scams are one of the most common ways businesses get compromised.
+</div>
+
+<div class="glass threat-card">
+Weak passwords, outdated software, and poor network security create easy entry points for attackers.
+</div>
+
+<div class="glass threat-card">
+Many businesses don't realize they are vulnerable until an incident or data breach occurs.
+</div>
+
+</div>
+
+</section>
+
+<!-- PROTECTION -->
+
+<section class="protection">
+
+<div class="protection-grid">
+
+<div class="glass protection-box">
+
+<h3>Endpoint Protection</h3>
+<p>We secure the computers and devices used by your business to prevent malware and unauthorized access.</p>
+
+<h3>Network Security</h3>
+<p>Your network is designed with secure firewalls and protections that block suspicious activity.</p>
+
+</div>
+
+<div class="glass protection-box">
+
+<h3>Threat Monitoring</h3>
+<p>We monitor your environment for unusual behavior and potential threats before they become serious problems.</p>
+
+<h3>Security Improvements</h3>
+<p>We continuously strengthen your security foundation so your systems remain protected as threats evolve.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RESULTS -->
+
+<section class="security-results">
+
+<div class="results-title">
+What Strong Cybersecurity Provides
+</div>
+
+<div class="results-grid">
+
+<div class="glass result-card">
+Protection against common cyber threats
+</div>
+
+<div class="glass result-card">
+Safer systems and protected business data
+</div>
+
+<div class="glass result-card">
+Confidence that your technology is secure
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="cta-title">
+Protect Your Business Technology
+</div>
+
+<a href="https://calendar.app.google/1M1Lkiw5kM1gBZ9A8"
+target="_blank"
+class="cta-button">
+Schedule Your Security Consultation
+</a>
+
+</section>
+
+</body>
+</html>
