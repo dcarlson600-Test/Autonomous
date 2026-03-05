@@ -136,24 +136,61 @@ LIQUID GLASS
 
 .glass{
 position:relative;
-background:rgba(255,255,255,0.45);
-backdrop-filter:blur(40px) saturate(160%);
--webkit-backdrop-filter:blur(40px) saturate(160%);
-border:1px solid rgba(255,255,255,0.65);
+background:rgba(255,255,255,0.38);
+backdrop-filter:blur(60px) saturate(180%);
+-webkit-backdrop-filter:blur(60px) saturate(180%);
+border:1px solid rgba(255,255,255,0.55);
 border-radius:32px;
 box-shadow:
-inset 0 1px 0 rgba(255,255,255,0.85),
-0 25px 50px rgba(0,0,0,0.12);
+inset 0 2px 6px rgba(255,255,255,0.65),
+inset 0 -8px 20px rgba(255,255,255,0.15),
+0 30px 60px rgba(0,0,0,0.15);
 overflow:hidden;
 transition:transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .35s ease;
+box-shadow .35s ease,
+background .35s ease;
+}
+
+/* Apple style glass highlight layer */
+.glass::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:inherit;
+background:linear-gradient(
+145deg,
+rgba(255,255,255,0.65) 0%,
+rgba(255,255,255,0.25) 35%,
+rgba(255,255,255,0.05) 60%,
+rgba(255,255,255,0.25) 100%
+);
+opacity:.55;
+pointer-events:none;
+}
+
+/* subtle light refraction */
+.glass::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:inherit;
+background:radial-gradient(
+circle at 20% 20%,
+rgba(255,255,255,0.55),
+transparent 60%
+);
+mix-blend-mode:overlay;
+opacity:.45;
+pointer-events:none;
 }
 
 .glass:hover{
-transform:translateY(-8px) scale(1.02);
+transform:translateY(-10px) scale(1.025);
 box-shadow:
-inset 0 1px 0 rgba(255,255,255,0.95),
-0 35px 70px rgba(0,0,0,0.18);
+inset 0 2px 10px rgba(255,255,255,0.85),
+inset 0 -10px 30px rgba(255,255,255,0.25),
+0 40px 80px rgba(0,0,0,0.22);
+background:rgba(255,255,255,0.45);
 }
 
 /* =============================
@@ -204,12 +241,18 @@ padding:40px;
 .service-box h3{
 margin-top:20px;
 margin-bottom:5px;
+text-shadow:
+0 1px 0 rgba(255,255,255,0.7),
+0 3px 8px rgba(0,0,0,0.25);
 }
 
 .service-box p{
 margin-top:0;
 margin-bottom:12px;
-color:#555;
+color:#1f2a36;
+text-shadow:
+0 1px 0 rgba(255,255,255,0.6),
+0 2px 6px rgba(0,0,0,0.18);
 }
 
 /* =============================
@@ -236,6 +279,9 @@ padding:35px;
 
 .why-card p{
 line-height:1.6;
+text-shadow:
+0 1px 0 rgba(255,255,255,0.7),
+0 2px 6px rgba(0,0,0,0.2);
 }
 
 .why-image video{
