@@ -320,6 +320,168 @@ Schedule Your Consultation
 </a>
 
 </section>
+<footer class="glass-footer">
+
+<div class="footer-bg">AUTONOMOUS</div>
+
+<div class="footer-content">
+
+<div class="footer-text">
+All Rights Reserved © 2026
+</div>
+
+<div class="footer-logo">
+<img src="https://raw.githubusercontent.com/dcarlson600-Test/Autonomous/main/Alogo.png">
+</div>
+
+</div>
+
+</footer>
+
+<style>
+
+/* ================================
+FOOTER
+================================ */
+
+.glass-footer{
+
+position:relative;
+width:100%;
+
+padding:50px 20px;
+
+background:rgba(20,115,175,0.85);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border-top:1px solid rgba(255,255,255,0.2);
+
+overflow:hidden;
+
+}
+
+/* ================================
+BACKGROUND WORD
+================================ */
+
+.footer-bg{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:14vw;
+font-weight:800;
+
+color:rgba(255,255,255,0.06);
+
+white-space:nowrap;
+
+pointer-events:none;
+
+}
+
+/* ================================
+CONTENT
+================================ */
+
+.footer-content{
+
+position:relative;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+max-width:1200px;
+margin:auto;
+
+}
+
+/* text */
+
+.footer-text{
+
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+
+font-size:22px;
+
+color:white;
+
+}
+
+/* logo */
+
+.footer-logo img{
+
+height:65px;
+
+transition:all .35s ease;
+
+filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+
+}
+
+.footer-logo img:hover{
+
+transform:scale(1.05);
+
+filter:
+drop-shadow(0 10px 20px rgba(0,0,0,0.45))
+drop-shadow(0 0 12px rgba(80,200,255,0.6));
+
+}
+
+/* ================================
+MOBILE
+================================ */
+
+@media (max-width:768px){
+
+.footer-content{
+
+flex-direction:column;
+
+gap:18px;
+
+text-align:center;
+
+}
+
+/* shrink the giant background word */
+
+.footer-bg{
+
+font-size:28vw;
+
+opacity:.08;
+
+}
+
+/* smaller text */
+
+.footer-text{
+
+font-size:20px;
+
+}
+
+/* smaller logo */
+
+.footer-logo img{
+
+height:55px;
+
+}
+
+}
+
+</style>
 
 </body>
 </html>
